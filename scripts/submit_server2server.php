@@ -7,12 +7,15 @@ function request($url, $data, $auth)
 {
 
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Authorization:Bearer $auth"));
-  curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // this should be set to true in production
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+  curl_setopt_array($ch, [
+    CURLOPT_URL => $url,
+    CURLOPT_HTTPHEADER => array("Authorization:Bearer $auth"),
+    CURLOPT_POST => 1, # true
+    CURLOPT_POSTFIELDS => $data,
+    CURLOPT_SSL_VERIFYPEER => false, # this should be set to true in production
+    CURLOPT_RETURNTRANSFER => true
+  ]);
 
   $responseData = curl_exec($ch);
 

@@ -241,6 +241,14 @@ const main = new Vue({
       .get("https://api.ipify.org?format=json")
       .then(response => {
         // dynamically add remaining required params for 3DSv2
+        this.basic.parameters.push(          
+          "customer.ip=" + response.data.ip
+        );
+      })
+      .catch(error => {
+        console.error(error)
+      })
+      .finally(() => {
         this.basic.parameters.push(
           "customer.browser.language=" + navigator.language,
           "customer.browser.screenHeight=" + window.innerHeight,
@@ -250,14 +258,9 @@ const main = new Vue({
           "customer.browser.javaEnabled=" + navigator.javaEnabled(),
           "customer.browser.screenColorDepth=" + screen.colorDepth,
           "customer.browser.challengeWindow=5",
-          "customer.ip=" + response.data.ip,
           "shopperResultUrl=" + this.build_return_url()
-        );
-      })
-      .catch(error => {
-        console.error(error)
-      })
-      .finally(() => {
+        )
+        
         console.trace('AJAX Call - Vue mounted: added requried paremeters for 3Ds V2')
       });
   }
