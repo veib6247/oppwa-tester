@@ -175,7 +175,7 @@ const main = new Vue({
         this.basic.parameters = [];
         // push new items
         param_array.forEach((element) => {
-          this.basic.parameterspush(element);
+          this.basic.parameters.push(element);
         });
       },
     },
@@ -212,7 +212,6 @@ Vue.component("widget", {
   props: ["checkout", "brands", "action"],
   template: `
     <div>
-      <hr />
       <script type="application/javascript" :src="checkout"></script>
       <form :action="action" class="paymentWidgets" :data-brands="brands"></form>
     </div>

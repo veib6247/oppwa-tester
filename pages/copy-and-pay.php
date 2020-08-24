@@ -156,7 +156,7 @@
                   <select multiple size="6" id="supported_brands" style="font-family: 'Roboto Mono';">
                     <?php
 
-                    # get json content and porse into an array
+                    # get json content and parse into an array
                     $supported_brands = json_decode(file_get_contents("../src/json/supported_brands.json"), true);
 
                     # print each array item into select element as option
@@ -260,7 +260,7 @@
             <li><a href="https://paymentknowledgebase.com/pages/viewpage.action?pageId=67272837" target="_blank">Technical Integration Guide (PSP) Docs</a></li>
             <li><a href="https://esupport.force.com/ACIHome" target="_blank">ACI eSupport</a></li>
             <li><a href="https://docs.google.com/spreadsheets/d/1mDGVT-9mqMqt3sm482imvSuervuMInzvgdpyDzuUmAU/edit?usp=sharing" target="_blank">Scripts Repository</a></li>
-            <li><a href="https://192.168.0.48:8888/integration/" target="_blank">COPYandPAY Integration Guide - Internal</a></li>
+            <li><a href="http://192.168.0.48:8888/integration/" target="_blank">COPYandPAY Integration Guide - Internal</a></li>
           </ul>
         </div>
 

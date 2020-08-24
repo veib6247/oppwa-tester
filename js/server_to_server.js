@@ -240,7 +240,7 @@ const main = new Vue({
     axios
       .get("https://api.ipify.org?format=json")
       .then(response => {
-        // dynamically add remaining required params for 3DSv2
+        // get the IP from the API and push into data array
         this.basic.parameters.push(          
           "customer.ip=" + response.data.ip
         );
@@ -249,6 +249,7 @@ const main = new Vue({
         console.error(error)
       })
       .finally(() => {
+        // push the rest of the dynamically acquired parameters into data array
         this.basic.parameters.push(
           "customer.browser.language=" + navigator.language,
           "customer.browser.screenHeight=" + window.innerHeight,
