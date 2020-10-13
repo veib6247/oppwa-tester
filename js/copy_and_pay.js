@@ -192,8 +192,11 @@ const main = new Vue({
       .then((response) => {
         // dynamically add remaining required params for 3DSv2
         this.basic.parameters.push(
-          "customer.ip=" + response.data.ip // <== it's the only thing I need from this really...
+          "customer.ip=" + response.data.ip // <== it's the only thing I need from this really...         
         );
+
+        // log the IP 
+        console.trace(response.data.ip)
       })
       .catch((error) => {
         console.error(error);
