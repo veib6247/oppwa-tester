@@ -188,7 +188,7 @@ const main = new Vue({
     // get ip using ipify and push the rest of the data
     this.button.in_progress = true;
     axios
-      .get("https://api.ipify.org?format=json")
+      .get("https://geo.ipify.org/api/v1?apiKey=at_AJyABOfKFcq8SbIS53Ori83AM78wh")
       .then((response) => {
         // dynamically add remaining required params for 3DSv2
         this.basic.parameters.push(
