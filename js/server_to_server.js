@@ -238,7 +238,7 @@ const main = new Vue({
 
     // get ip using ipify and push the rest of the data
     axios
-      .get("https://api.ipify.org?format=json")
+      .get("https://geo.ipify.org/api/v1?apiKey=at_AJyABOfKFcq8SbIS53Ori83AM78wh")
       .then(response => {
         // get the IP from the API and push into data array
         this.basic.parameters.push(          

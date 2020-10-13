@@ -194,9 +194,6 @@ const main = new Vue({
         this.basic.parameters.push(
           "customer.ip=" + response.data.ip // <== it's the only thing I need from this really...         
         );
-
-        // log the IP 
-        console.trace(response.data.ip)
       })
       .catch((error) => {
         console.error(error);
