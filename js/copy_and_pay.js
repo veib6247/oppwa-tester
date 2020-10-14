@@ -185,7 +185,7 @@ const main = new Vue({
    * call function when Vue is mounted into the DOM
    */
   mounted: function () {
-    // get ip using ipify and push the rest of the data
+    // get ip using geo.ipify.org and push the rest of the data
     this.button.in_progress = true;
     axios
       .get("https://geo.ipify.org/api/v1?apiKey=at_AJyABOfKFcq8SbIS53Ori83AM78wh")
