@@ -85,7 +85,7 @@
     </nav>
 
     <!-- hero -->
-    <section class="hero is-primary">
+    <section class="hero is-primary" style="background-image: url(../src/images/megumin.png); background-position: center;">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">CopyandPay</h1>

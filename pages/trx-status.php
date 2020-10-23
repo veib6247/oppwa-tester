@@ -91,7 +91,7 @@ session_start()
   </div>
 
   <!-- hero -->
-  <section class="hero is-primary">
+  <section class="hero is-primary" style="background-image: url(../src/images/pekora.png); background-position: center;">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">Transaction Result</h1>

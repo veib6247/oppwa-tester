@@ -87,7 +87,7 @@
     </nav>
 
     <!-- hero -->
-    <section class="hero is-primary">
+    <section class="hero is-primary" style="background-image: url(../src/images/yuru_camp.png); background-position: top center;">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">Query Transaction</h1>
