@@ -93,6 +93,9 @@ const main = new Vue({
       data.append("data", this.build_data_string());
       data.append("authorization", this.basic.authorization);
 
+      /**
+       * might need to change this into just using the fetch API instead
+       */
       // post via axios
       axios
         .post(url, data)
