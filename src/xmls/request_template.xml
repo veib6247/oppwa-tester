@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Request version="1.0">
+    <Header>
+        <Security sender="8ac7a4c86b308f7b016b457dd326173b" />
+    </Header>
+    <Transaction mode="LIVE" response="SYNC" channel="8ac7a4c86b308f7b016b457ebb3c1741">
+        <User login="8ac7a4c86b308f7b016b457dd326173d" pwd="qETR7T32y2"/>
+        <Identification>
+            <TransactionID>Test Transaction 001</TransactionID>
+        </Identification>
+        <Payment code="CC.DB">
+            <Presentation>
+                <Amount>1.00</Amount>
+                <Currency>GBP</Currency>
+                <Usage>Order Number 1234</Usage>
+            </Presentation>
+        </Payment>
+        <Account>
+            <Holder>Joe Doe</Holder>
+            <Number>4200000000000000</Number>
+            <Brand>VISA</Brand>
+            <Expiry month="09" year="2020"></Expiry>
+            <Verification>123</Verification>
+        </Account>
+        <Customer>
+            <Name>
+                <Salutation>MR</Salutation>
+                <Given>Joe</Given>
+                <Family>Doe</Family>
+            </Name>
+            <Contact>
+                <Phone>+49-89-1234566</Phone>
+                <Mobile>+49-172-1234566</Mobile>
+                <Email>info@provider.com</Email>
+                <Ip>123.123.123.123</Ip>
+            </Contact>
+        </Customer>
+        <Analysis>
+            <Criterion name="affiliate">ExternalShopXY</Criterion>
+            <Criterion name="age">30-40</Criterion>
+            <Criterion name="known">yes</Criterion>
+            <Criterion name="customerid">1234567</Criterion>
+        </Analysis>
+    </Transaction>
+</Request>
