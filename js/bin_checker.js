@@ -2,13 +2,13 @@
  * main vue instance
  */
 const main = new Vue({
-  el: "#main",
+  el: '#main',
   data: {
     // model for the BIN field
-    bin: "",
+    bin: '',
 
     // will contain API response after the query
-    response: "",
+    response: '',
 
     // controller for burger icon when windows size is smaller than desktop
     is_nav_burger_visible: false,
@@ -25,42 +25,42 @@ const main = new Vue({
      * accepts boolean to toggle states
      */
     stateChanger: function (buttonInProgress) {
-      this.button.in_progress = buttonInProgress;
+      this.button.in_progress = buttonInProgress
     },
     /**
      * Submit BIN info to API
      */
     submitBIN: function () {
-      this.stateChanger(true);
-      this.response = "";
+      this.stateChanger(true)
+      this.response = ''
 
       /**
        * initialize axios variables
        */
-      const url = "../scripts/submit_BIN.php";
-      let data = new URLSearchParams();
+      const url = '../scripts/submit_BIN.php'
+      let data = new URLSearchParams()
 
-      data.append("bin", this.bin);
+      data.append('bin', this.bin)
 
       // post via axios
       axios
         .post(url, data)
         .then((response) => {
-          this.response = response.data;
+          this.response = response.data
         })
         .catch((error) => {
-          console.error(error);
+          console.error(error)
         })
         .finally(() => {
-          this.stateChanger(false);
-        });
+          this.stateChanger(false)
+        })
     },
     /**
      * used to toggle the menue to be visible in smaller screens
      */
     toggle_burger: function () {
-      this.is_nav_burger_visible = !this.is_nav_burger_visible;
-      this.is_menu_visible = !this.is_menu_visible;
+      this.is_nav_burger_visible = !this.is_nav_burger_visible
+      this.is_menu_visible = !this.is_menu_visible
     },
   },
-});
+})

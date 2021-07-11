@@ -2,12 +2,13 @@ const app = new Vue({
   el: '#main',
   data: {
     button: {
-      in_progress: false
+      in_progress: false,
     },
 
     fields: {
-      endpoint: 'https://test.oppwa.com/reports/v1/reconciliations/aggregations',
-      bearer: 'OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg='
+      endpoint:
+        'https://test.oppwa.com/reports/v1/reconciliations/aggregations',
+      bearer: 'OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=',
     },
 
     parameters: [
@@ -15,15 +16,15 @@ const app = new Vue({
       'date.from=2015-08-01',
       'date.to=2015-08-02',
       'currency=EUR',
-      'testMode=INTERNAL'
+      'testMode=INTERNAL',
     ],
 
     response: {
-      data: ''
+      data: '',
     },
 
     is_nav_burger_visible: false,
-    is_menu_visible: false
+    is_menu_visible: false,
   },
 
   methods: {
@@ -43,54 +44,54 @@ const app = new Vue({
       this.response.data = ''
 
       const url = '../scripts/submit_settlements.php'
-      let data = new URLSearchParams();
+      let data = new URLSearchParams()
 
-      data.append("host", this.fields.endpoint);
-      data.append("data", this.build_data_string());
-      data.append("bearer", this.fields.bearer);
+      data.append('host', this.fields.endpoint)
+      data.append('data', this.build_data_string())
+      data.append('bearer', this.fields.bearer)
 
       // post via axios
       axios
         .post(url, data)
-        .then(response => {
+        .then((response) => {
           this.response.data = response.data
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error)
         })
         .finally(() => {
           this.button.in_progress = false
-        });
+        })
     },
 
     /**
      * build the string to be used for POST request later
      */
     build_data_string: function () {
-      let str_data = "";
+      let str_data = ''
       // loop through each item to build string
       this.parameters.forEach((element, index) => {
         // append the separator except the end of the string
-        index !== this.parameters.length - 1 ?
-          (str_data += element + "&") :
-          (str_data += element)
-      });
+        index !== this.parameters.length - 1
+          ? (str_data += element + '&')
+          : (str_data += element)
+      })
       // return data string for later use
       return str_data
-    }
+    },
   },
 
   computed: {
     build_parameter_string: {
       // getter
       get: function () {
-        let str_parameter = ""
+        let str_parameter = ''
         // loop through each item to build string
         this.parameters.forEach((element, index) => {
           // if it's not the end of the array yet
-          index !== this.parameters.length - 1 ?
-            (str_parameter += element + "\n") :
-            (str_parameter += element)
+          index !== this.parameters.length - 1
+            ? (str_parameter += element + '\n')
+            : (str_parameter += element)
         })
 
         return str_parameter
@@ -99,15 +100,15 @@ const app = new Vue({
       // setter
       set: function () {
         // get the textarea by ID
-        const textarea = document.querySelector("#txt_params")
-        const param_array = textarea.value.split("\n")
+        const textarea = document.querySelector('#txt_params')
+        const param_array = textarea.value.split('\n')
         // clear the array
         this.parameters = []
         // push new items
-        param_array.forEach(element => {
+        param_array.forEach((element) => {
           this.parameters.push(element)
         })
-      }
-    }
-  }
+      },
+    },
+  },
 })

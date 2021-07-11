@@ -1,18 +1,18 @@
 const main = new Vue({
-  el: "#main",
+  el: '#main',
   data: {
     transaction: {
-      host: "https://test.oppwa.com",
-      uid: "",
-      auth: "OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=",
-      entity: "8a8294174b7ecb28014b9699220015ca"
+      host: 'https://test.oppwa.com',
+      uid: '',
+      auth: 'OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=',
+      entity: '8a8294174b7ecb28014b9699220015ca',
     },
-    response: "",
+    response: '',
     button: {
-      in_progress: false
+      in_progress: false,
     },
     is_nav_burger_visible: false,
-    is_menu_visible: false
+    is_menu_visible: false,
   },
 
   methods: {
@@ -26,36 +26,36 @@ const main = new Vue({
     submit: function () {
       // validate if all fields are complete
       if (
-        this.transaction.host == "" ||
-        this.transaction.uid == "" ||
-        this.transaction.auth == "" ||
-        this.transaction.entity == ""
+        this.transaction.host == '' ||
+        this.transaction.uid == '' ||
+        this.transaction.auth == '' ||
+        this.transaction.entity == ''
       ) {
-        alert("Please fill up all fields");
+        alert('Please fill up all fields')
       } else {
         // start axios post request
-        this.button.in_progress = true;
-        this.response = "";
+        this.button.in_progress = true
+        this.response = ''
 
-        const url = "../scripts/query_trx.php";
-        let data = new URLSearchParams();
-        data.append("host", this.transaction.host);
-        data.append("id", this.transaction.uid);
-        data.append("entity", this.transaction.entity);
-        data.append("auth", this.transaction.auth);
+        const url = '../scripts/query_trx.php'
+        let data = new URLSearchParams()
+        data.append('host', this.transaction.host)
+        data.append('id', this.transaction.uid)
+        data.append('entity', this.transaction.entity)
+        data.append('auth', this.transaction.auth)
 
         axios
           .post(url, data)
-          .then(response => {
-            this.response = response.data;
+          .then((response) => {
+            this.response = response.data
           })
-          .catch(error => {
-            console.log(error);
+          .catch((error) => {
+            console.log(error)
           })
           .finally(() => {
-            this.button.in_progress = false;
-          });
+            this.button.in_progress = false
+          })
       }
-    }
-  }
-});
+    },
+  },
+})
