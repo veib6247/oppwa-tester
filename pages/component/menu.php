@@ -76,6 +76,22 @@
 
   </div>
 
+  <div class="navbar-end">
+      <div class="navbar-item">
+        Was this tool useful?
+      </div>
+      <div class="navbar-item">
+        <a class="button is-rounded is-primary" href="https://paypal.me/bryanolandres?locale.x=en_US" target="_blank">
+          <span class="icon is-medium">
+            <i class="fab fa-paypal"></i>
+          </span>
+          <span>
+            Consider Donating!
+          </span>
+        </a>
+      </div>
+    </div>
+
 </div>'
 
 ?>

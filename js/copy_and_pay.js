@@ -263,8 +263,10 @@ const main = new Vue({
    * call function when Vue is mounted into the DOM
    */
   mounted: function () {
-    // get ip using seeip and push the rest of the data
+    // start loading button animation
     this.button.in_progress = true
+
+    // get ip using seeip and push the rest of the data
     axios
       .get('https://ip4.seeip.org/json')
       .then((response) => {

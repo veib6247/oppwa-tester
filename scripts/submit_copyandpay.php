@@ -3,6 +3,16 @@
 # we only need the host anyways
 session_start();
 
+# save the posted url to extract the host later
+$_SESSION['cnp_url'] = $_POST['url'];
+$_SESSION['cnp_data'] = $_POST['data'];
+$_SESSION['cnp_authorization'] = $_POST['authorization'];
+
+# call the function then echo the response
+$responseData = request($_POST['url'], $_POST['data'], $_POST['authorization']);
+
+echo $responseData;
+
 function request($url, $data, $authorization)
 {
 
@@ -45,13 +55,3 @@ function request($url, $data, $authorization)
    */
   return $responseData;
 }
-
-# save the posted url to extract the host later
-$_SESSION['cnp_url'] = $_POST['url'];
-$_SESSION['cnp_data'] = $_POST['data'];
-$_SESSION['cnp_authorization'] = $_POST['authorization'];
-
-# call the function then echo the response
-$responseData = request($_POST['url'], $_POST['data'], $_POST['authorization']);
-
-echo $responseData;
