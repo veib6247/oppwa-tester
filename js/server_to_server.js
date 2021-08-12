@@ -196,6 +196,33 @@ const main = new Vue({
       let transactionId = `test_transaction_${Date.now()}`
       return transactionId
     },
+
+    add_cof_initial_unsched: function () {
+      this.basic.parameters.push('standingInstruction.mode=INITIAL')
+      this.basic.parameters.push('standingInstruction.type=UNSCHEDULED')
+      this.basic.parameters.push('standingInstruction.source=CIT')
+    },
+
+    add_cof_initial_recurring: function () {
+      this.basic.parameters.push('standingInstruction.mode=INITIAL')
+      this.basic.parameters.push('standingInstruction.type=RECURRING')
+      this.basic.parameters.push('standingInstruction.source=CIT')
+    },
+
+    add_cof_repeated_unsched: function () {
+      this.basic.parameters.push('standingInstruction.mode=REPEATED')
+      this.basic.parameters.push('standingInstruction.type=UNSCHEDULED')
+      this.basic.parameters.push('standingInstruction.source=MIT')
+    },
+
+    add_cof_repeated_recurring: function () {
+      this.basic.parameters.push('standingInstruction.mode=REPEATED')
+      this.basic.parameters.push('standingInstruction.type=RECURRING')
+      this.basic.parameters.push(
+        'standingInstruction.initialTransactionId=[INSERT_INIT_ID_HERE]'
+      )
+      this.basic.parameters.push('standingInstruction.source=MIT')
+    },
   },
 
   computed: {

@@ -109,25 +109,48 @@
                   Parameters<span v-if="button.in_progress">, acquiring IP. Please wait...</span>
                 </label>
                 <div class="control" :class="{'is-loading': button.in_progress}">
-                  <textarea name="" id="txt_params" cols="30" rows="13" class="textarea is-small"
+                  <textarea name="" id="txt_params" cols="30" rows="16" class="textarea is-small"
                     style="font-family: 'Roboto Mono';" v-model="build_parameter_string" spellcheck="false"></textarea>
                 </div>
               </div>
 
-              <div class="field">
-                <div class="control">
-                  <button class="button is-primary is-small" style="font-family: 'Roboto Mono';"
-                    :class="{'is-loading': button.in_progress}" v-if="session_variables.data"
-                    @click="load_previous_data">
-                    <span class="icon is-small">
-                      <i class="fas fa-undo"></i>
-                    </span>
-                    <span>
-                      Load Previous Data
-                    </span>
-                  </button>
+
+
+              <nav class="level">
+                <div class="level-left">
+                  <div class="level-item">
+                    <div class="field">
+                      <div class="control"><button class="button is-primary is-small"
+                          style="font-family: 'Roboto Mono';" @click="add_cof_parameters">Add
+                          COF
+                          Parameters (INITIAL)</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <div class="level-right">
+                  <div class="level-item">
+                    <div class="field">
+                      <div class="control">
+                        <button class="button is-primary is-small" style="font-family: 'Roboto Mono';"
+                          :class="{'is-loading': button.in_progress}" v-if="session_variables.data"
+                          @click="load_previous_data">
+                          <span class="icon is-small">
+                            <i class="fas fa-undo"></i>
+                          </span>
+                          <span>
+                            Load Previous Data
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+
+
+
             </div>
             <!-- end left column -->
 

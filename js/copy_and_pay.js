@@ -226,6 +226,14 @@ const main = new Vue({
       let transactionId = `test_transaction_${Date.now()}`
       return transactionId
     },
+
+    add_cof_parameters: function () {
+      this.basic.parameters.push('standingInstruction.mode=INITIAL')
+      this.basic.parameters.push(
+        'standingInstruction.type=UNSCHEDULED or RECURRING (Please pick 1)'
+      )
+      this.basic.parameters.push('standingInstruction.source=CIT')
+    },
   },
 
   computed: {

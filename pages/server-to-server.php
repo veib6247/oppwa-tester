@@ -104,19 +104,60 @@
             </div>
           </div>
 
-          <!-- submit button -->
-          <div class="field">
-            <div class="control">
-              <!-- autoscroll to the progess bar when button has been pressed -->
-              <a href="#progress_bar" class="button is-small is-primary" @click="submit"
-                :class="{'is-loading': button.in_progress}">
-                <span class="icon is-small">
-                  <i class="far fa-paper-plane"></i>
-                </span>
-                <span>Submit</span>
-              </a>
+
+
+          <!-- level component for the buttons -->
+          <nav class="level">
+            <!-- left side -->
+            <div class="level-left">
+              <div class="level-item">
+                <!-- submit button -->
+                <div class="field">
+                  <div class="control">
+                    <!-- autoscroll to the progess bar when button has been pressed -->
+                    <a href="#progress_bar" class="button is-small is-primary" @click="submit"
+                      :class="{'is-loading': button.in_progress}">
+                      <span class="icon is-small">
+                        <i class="far fa-paper-plane"></i>
+                      </span>
+                      <span>Submit</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+
+
+            <!-- right side -->
+            <div class="level-right">
+              <div class="level-item">
+                <div class="field">
+                  <div class="control"><a class="button is-small is-primary" @click="add_cof_initial_unsched">Add COF
+                      (INITIAL) - UNSCHEDULED</a></div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="field">
+                  <div class="control"><a class="button is-small is-primary" @click="add_cof_initial_recurring">Add COF
+                      (INITIAL) - RECURRING</a></div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="field">
+                  <div class="control"><a class="button is-small is-primary" @click="add_cof_repeated_unsched">Add COF
+                      (REPEATED) - UNSCHEDULED</a></div>
+                </div>
+              </div>
+              <div class="level-item">
+                <div class="field">
+                  <div class="control"><a class="button is-small is-primary" @click="add_cof_repeated_recurring">Add COF
+                      (REPEATED) - RECURRING</a></div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
         </div>
 
         <!-- 
