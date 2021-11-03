@@ -7,7 +7,7 @@ const app = new Vue({
 
     fields: {
       endpoint:
-        'https://test.oppwa.com/reports/v1/reconciliations/aggregations',
+        'https://eu-test.oppwa.com/reports/v1/reconciliations/aggregations',
       bearer: 'OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=',
     },
 

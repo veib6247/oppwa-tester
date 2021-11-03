@@ -24,7 +24,7 @@ function request($format, $api_key, $bin)
     curl_setopt_array($ch, [
       CURLOPT_URL => $url,
       CURLOPT_CUSTOMREQUEST => 'GET',
-      CURLOPT_SSL_VERIFYPEER => false, # this should be set to true in production
+      CURLOPT_SSL_VERIFYPEER => true, # this should be set to true in production
       CURLOPT_RETURNTRANSFER => true
     ]);
 

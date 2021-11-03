@@ -2,7 +2,7 @@ const main = new Vue({
   el: '#main',
   data: {
     transaction: {
-      host: 'https://test.oppwa.com',
+      host: 'https://eu-test.oppwa.com',
       uid: '',
       auth: 'OGE4Mjk0MTc0YjdlY2IyODAxNGI5Njk5MjIwMDE1Y2N8c3k2S0pzVDg=',
       entity: '8a8294174b7ecb28014b9699220015ca',

@@ -29,7 +29,7 @@ function request($url, $data) {
     CURLOPT_ENCODING => "",
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => $data,
-    CURLOPT_SSL_VERIFYPEER => false,
+    CURLOPT_SSL_VERIFYPEER => true,
     CURLOPT_HTTPHEADER => ["Content-Type: application/x-www-form-urlencoded;charset=UTF-8"]
   ]);
 

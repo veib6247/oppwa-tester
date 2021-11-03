@@ -27,7 +27,7 @@ function request($url, $data, $authorization)
     CURLOPT_HTTPHEADER => array("Authorization:Bearer $authorization"),
     CURLOPT_POST => 1, # true
     CURLOPT_POSTFIELDS => $data,
-    CURLOPT_SSL_VERIFYPEER => false, # this should be set to true in production
+    CURLOPT_SSL_VERIFYPEER => true, # this should be set to true in production
     CURLOPT_RETURNTRANSFER => true
   ]);
 

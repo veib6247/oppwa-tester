@@ -10,7 +10,7 @@ function request($host, $id, $entity, $auth)
     CURLOPT_URL => $url,
     CURLOPT_HTTPHEADER => array("Authorization:Bearer $auth"),
     CURLOPT_CUSTOMREQUEST => 'GET',
-    CURLOPT_SSL_VERIFYPEER => false, # this should be set to true in production
+    CURLOPT_SSL_VERIFYPEER => true, # this should be set to true in production
     CURLOPT_RETURNTRANSFER => true
   ]);
 
